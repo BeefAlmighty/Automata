@@ -20,8 +20,8 @@ class Point:
 
     def __repr__(self):
         return '(' + str(self.location[0]) \
-               + ',' + str(self.location[1]) + ')'\
-               + " Alive" if str(self._state) else "Dead"
+               + ',' + str(self.location[1]) + ')'
+
 
     def touching(self, point):
         return point.location in self.neighbourCells.values()

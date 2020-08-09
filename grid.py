@@ -61,9 +61,6 @@ class Grid:
         locations = self.get_live_points()
         other_points = [item for item in locations if item != point]
         return sum([1 for item in other_points if point.touching(item)])
-        # nbs = set(point.get_neighbour_list())
-        # nums = sum([min(1, len(set(item.get_neighbour_list())
-        #                        .intersection(nbs))) for item in other_points])
 
     def get_grid(self):
         return self.grid
@@ -118,9 +115,6 @@ class Grid:
 
 if __name__=='__main__':
     g = Grid(m=10, locations=[(4,7),(5,7),(6,7),(6,6), (5,5)])
-    print(g.get_live_points())
-    print(list(map(g.how_many_live_neighbours, g.get_live_points())))
-    #g.apply_rule(g.randomize)
     g.view()
     while g.updates < 15:
         g.close()
